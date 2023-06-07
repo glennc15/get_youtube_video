@@ -14,7 +14,7 @@ class ConfigReaderTest(unittest.TestCase):
 		self.config = json.loads(json_file.read())
 
 		json_file.close()
-		
+
 
 	def test_email_attribute(self):
 		config = ConfigReader()
@@ -24,6 +24,16 @@ class ConfigReaderTest(unittest.TestCase):
 	def test_playlists_attribute(self):
 		config = ConfigReader()
 		self.assertEqual(config.playlists, self.config['playlists'])
+
+
+	def test_max_wait_attribute(self):
+		config = ConfigReader()
+		self.assertEqual(config.max_wait, self.config['max_wait'])
+
+
+	def test_pause_attribute(self):
+		config = ConfigReader()
+		self.assertEqual(config.pause, self.config['pause'])
 
 
 	# def test_email_attribute(self):

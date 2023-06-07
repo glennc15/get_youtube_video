@@ -17,7 +17,7 @@ class PlaylistSelectorTest(unittest.TestCase):
 
 	def test_returns_random_playlist_url(self):
 		playlist_selector = PlaylistSelector()
-		self.assertIn(playlist_selector.get_randon_playlist(), self.all_playlists_urls)
+		self.assertIn(playlist_selector.get_randomplaylist(), self.all_playlists_urls)
 
 
 

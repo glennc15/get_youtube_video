@@ -32,6 +32,24 @@ class ConfigReader(object):
 		self._playlists = value  
 
 
+	@property 
+	def pause(self):
+		return self._pause 
+
+	@pause.setter
+	def pause(self, value):
+		self._pause = value  
+
+
+	@property 
+	def max_wait(self):
+		return self._max_wait 
+
+	@max_wait.setter
+	def max_wait(self, value):
+		self._max_wait = value  
+
+
 
 # *************************************************************
 # Start: Private methods
@@ -45,6 +63,8 @@ class ConfigReader(object):
 
 		self.email = config_json['email']
 		self.playlists = config_json['playlists']
+		self.pause = config_json['pause']
+		self.max_wait = config_json['max_wait']
 
 		json_file.close()
 

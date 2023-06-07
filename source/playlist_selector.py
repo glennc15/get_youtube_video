@@ -18,13 +18,13 @@ class PlaylistSelector(ConfigReader):
 	# *************************************************************
 	# Start: Public methods
 	
-	def get_randon_playlist(self):
+	def get_random_playlist(self):
 		'''
 
 		returns a random playlist url.
 
 		'''
-		
+
 		all_playlists = [v for k, v in ConfigReader().playlists.items()]
 		all_playlists_urls = [url for playlist in all_playlists for url in playlist]
 
