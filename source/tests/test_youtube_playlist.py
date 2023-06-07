@@ -6,7 +6,7 @@ from source.youtube_playlist import YouTubePlaylist
 
 class YouTubePlaylistTest(unittest.TestCase):
 	def test_initialization(self):
-		self.fail("write test!")
+		YouTubePlaylist()
 
 
 if __name__ == '__main__':
