@@ -15,6 +15,12 @@
 	},
 	"email": "123@abc",
 	"pause": 20,
-	"max_wait": 10
+	"max_wait": 10,
+	"email_sender": "gcrosby15@gmail.com",
+	"email_body": "Please take a few moments to view todays video:\n{}",
+	"email_subject": "Today's Video",
+	"email_recipents": ["gcrosby15@gmail.com", "gcrosby15@hotmail.com"],
+	"email_server": "smtp.gmail.com",
+	"email_server_port": 465
 
 }

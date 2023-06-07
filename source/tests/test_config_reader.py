@@ -36,6 +36,38 @@ class ConfigReaderTest(unittest.TestCase):
 		self.assertEqual(config.pause, self.config['pause'])
 
 
+	def test_email_sender_attribute(self):
+		config = ConfigReader()
+		self.assertEqual(config.email_sender, self.config['email_sender'])
+
+
+	def test_email_recipents_attribute(self):
+		config = ConfigReader()
+		self.assertEqual(config.email_recipents, self.config['email_recipents'])
+
+
+	def test_email_server_attribute(self):
+		config = ConfigReader()
+		self.assertEqual(config.email_server, self.config['email_server'])
+
+
+	def test_email_server_port_attribute(self):
+		config = ConfigReader()
+		self.assertEqual(config.email_server_port, self.config['email_server_port'])
+
+
+	def test_email_subject_attribute(self):
+		config = ConfigReader()
+		self.assertEqual(config.email_subject, self.config['email_subject'])
+
+
+	def test_email_body_attribute(self):
+		config = ConfigReader()
+		self.assertEqual(config.email_body, self.config['email_body'])
+
+
+
+
 	# def test_email_attribute(self):
 	# 	config = ConfigReader()
 	# 	self.assertEqual(config.email = json_file['email'])
