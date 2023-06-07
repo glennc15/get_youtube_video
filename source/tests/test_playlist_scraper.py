@@ -1,6 +1,6 @@
 import unittest
 
-from youtube_playlist_scraper.playlist_scraper import PlaylistScraper
+from source.playlist_scraper import PlaylistScraper
 
 
 

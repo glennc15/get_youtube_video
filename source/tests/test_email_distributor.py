@@ -1,6 +1,6 @@
 import unittest
 
-from youtube_playlist_scraper.email_distributor import EmailDistributor
+from source.email_distributor import EmailDistributor
 
 
 

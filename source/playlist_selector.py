@@ -1,4 +1,4 @@
-from youtube_playlist_scraper.config_reader import ConfigReader 
+from source.config_reader import ConfigReader 
 
 
 class PlaylistSelector(ConfigReader):

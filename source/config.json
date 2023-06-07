@@ -1,0 +1,18 @@
+{
+	"playlists": {
+		"Personal Leadership": ["https://youtube.com/playlist?list=PLZ1XR9BfLduNPMeWJYy4wv9gXQOO_dkDO"],
+		"People and Culture": ["https://youtube.com/playlist?list=PLZ1XR9BfLduMXUpsnkgPHXvuvy-BlpjuY"],
+		"Strategy": ["https://youtube.com/playlist?list=PLZ1XR9BfLduNt5QokVd3jBqoc4hKCU48u"],
+		"Business Leadership": ["https://youtube.com/playlist?list=PLZ1XR9BfLduMML1us8rpt9Fw8gu9JjejQ"],
+		"Non Profit": [
+			"https://www.youtube.com/playlist?list=PLZ1XR9BfLduPr_l_5PNbkWe7nLYNWlmzY",
+			"https://youtube.com/playlist?list=PLZ1XR9BfLduNPMeWJYy4wv9gXQOO_dkDO",
+			"https://youtube.com/playlist?list=PLZ1XR9BfLduMXUpsnkgPHXvuvy-BlpjuY",
+			"https://youtube.com/playlist?list=PLZ1XR9BfLduNt5QokVd3jBqoc4hKCU48u",
+			"https://youtube.com/playlist?list=PLZ1XR9BfLduMML1us8rpt9Fw8gu9JjejQ",
+			"https://www.youtube.com/playlist?list=PLZ1XR9BfLduPr_l_5PNbkWe7nLYNWlmzY"
+		]
+	},
+	"email": "123@abc"
+
+}
