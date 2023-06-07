@@ -3,6 +3,11 @@ import json
 
 
 class ConfigReader(object):
+	'''
+	
+	reads the config file (config.json) and stores all entries as properties.
+
+	'''
 
 	def __init__(self):
 		self.read_config_file()
@@ -46,4 +51,7 @@ class ConfigReader(object):
 
 
 # End: Private methods
-# *************************************************************
+# *************************************************************      
+
+
+
