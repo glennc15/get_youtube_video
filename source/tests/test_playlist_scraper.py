@@ -1,5 +1,6 @@
 import unittest
 
+from source.config_reader import ConfigReader
 from source.playlist_scraper import PlaylistScraper
 
 
