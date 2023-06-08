@@ -1,7 +1,7 @@
 import random
 
 from source.playlist_selector import PlaylistSelector
-from source.playlist_scraper import PlaylistScraper
+from source.playlist_scraper import get_videos
 from source.email_distributor import EmailDistributor 
 
 
@@ -17,32 +17,41 @@ class YouTubePlaylist(object):
 
 
 	'''	
-	def __init__(self):
-
-		self.run_controller()
+	def __init__(self, email_password, config_data=None):
+		self.run_controller(
+			email_password=email_password,
+			config_data=config_data
+		)
 
 
 
 	# *************************************************************
 	# Start: Public methods
 	
-	def run_controller(self):
+	def run_controller(self, email_password, config_data):
 		'''
 
 		main controller method for the class
 
 		'''
-		playlist_url = PlaylistSelector().get_random_playlist()
 
-		playlist_scraper = PlaylistScraper()
-		playlist_scraper.get_videos(playlist_url=playlist_url)
+		# Selecting a random playlist:
+		playlist_url = PlaylistSelector(config_data=config_data).get_random_playlist()
+		print("Selected the following playlist:\n{}\n".format(playlist_url))
 
-		if len(playlist_scraper.videos) > 0:
-			video_url = random.choice(playlist_scraper.videos)
+		# playlist_scraper = PlaylistScraper()
+		print("Getting video urls from YouTube (this will take a few seconds...)")
+		videos = get_videos(playlist_url=playlist_url)
 
+		# main a random video to each email recipient:
+		if len(videos) > 0:
+			video_url = random.choice(videos)
+
+			print("Sending the following video URL to each email recipient\n{}\n".format(video_url))
+			
 			email_distributor = EmailDistributor()
 			email_distributor.send_emails(
-				email_password='epnimreasdtblmzb',
+				email_password=email_password,
 				video_url=video_url
 			)
 
