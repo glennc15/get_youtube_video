@@ -23,8 +23,6 @@ class PlaylistSelectorTest(unittest.TestCase):
 		json_file.close()
 
 
-
-
 	def test_returns_random_playlist_url(self):
 		playlist_selector = PlaylistSelector()
 		self.assertIn(playlist_selector.get_random_playlist(), self.all_playlists_urls)

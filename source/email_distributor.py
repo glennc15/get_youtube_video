@@ -14,8 +14,8 @@ class EmailDistributor(ConfigReader):
 
 
 	'''
-	def __init__(self):		
-		super().__init__()
+	def __init__(self, config_data=None):		
+		super().__init__(config_data=config_data)
 
 
 
@@ -70,6 +70,7 @@ class EmailDistributor(ConfigReader):
 		sender_email = self.email_sender  # Enter your address
 		receiver_email = recipient  # Enter receiver address
 		password = email_password
+		# email_login = self.email_login
 
 		# Build the email message:
 		msg = EmailMessage()
