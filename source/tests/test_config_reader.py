@@ -66,6 +66,10 @@ class ConfigReaderTest(unittest.TestCase):
 		self.assertEqual(config.email_body, self.config['email_body'])
 
 
+	def test_email_login_attribute(self):
+		config = ConfigReader()
+		self.assertEqual(config.email_login, self.config['email_login'])
+
 
 	def test_email_attribute_with_user_supplies_config_data(self):
 		config = ConfigReader(config_data=self.config)
@@ -117,11 +121,46 @@ class ConfigReaderTest(unittest.TestCase):
 		self.assertEqual(config.email_body, self.config['email_body'])
 
 
+	def test_email_login_attribute_with_user_supplies_config_data(self):
+
+		email_login = 'login_email_address@gmail.com'
+
+		self.config['email_login'] = email_login
+
+		config = ConfigReader(config_data=self.config)
+		self.assertEqual(config.email_login, email_login)
 
 
-	# def test_email_attribute(self):
-	# 	config = ConfigReader()
-	# 	self.assertEqual(config.email = json_file['email'])
+	def test_email_login_attribute_missing_with_user_supplies_config_data(self):
+		'''
+		
+		if the 'email_login' attribute is missing in the configuration
+		dictionary then 'email_sender' is used for 'email_login'
+
+		'''
+
+		del self.config['email_login']
+
+		config = ConfigReader(config_data=self.config)
+		self.assertEqual(config.email_login, self.config['email_sender'])
+
+
+	def test_email_login_attribute_is_None(self):
+		'''
+		
+		if the 'email_login' attribute is None in the configuration
+		dictionary then 'email_sender' is used for 'email_login'
+
+		'''
+		
+		self.config['email_login'] = None 
+
+		config = ConfigReader(config_data=self.config)
+		self.assertEqual(config.email_login, self.config['email_sender'])
+
+
+
+
 
 
 

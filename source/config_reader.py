@@ -11,8 +11,7 @@ class ConfigReader(object):
 	'''
 
 	def __init__(self, config_data=None):
-		self.read_config_file(config_data=None)
-
+		self.read_config_file(config_data=config_data)
 
 
 	@property 
@@ -105,6 +104,15 @@ class ConfigReader(object):
 		self._email_server_port = value 
 
 
+	@property 
+	def email_login(self):
+		return self._email_login 
+
+	@email_login.setter
+	def email_login(self, value):
+		self._email_login = value 
+
+
 # *************************************************************
 # Start: Private methods
 	
@@ -134,6 +142,13 @@ class ConfigReader(object):
 		self.email_recipents = config_data['email_recipents']
 		self.email_server = config_data['email_server']
 		self.email_server_port = config_data['email_server_port']
+
+		# if email_login is None or missing use the email_sender:
+		if config_data.get('email_login') is None:
+			self.email_login = config_data['email_sender']
+
+		else:
+			self.email_login = config_data['email_login']
 
 
 
