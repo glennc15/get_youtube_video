@@ -10,8 +10,8 @@ class PlaylistSelector(ConfigReader):
 
 	'''
 
-	def __init__(self):
-		super().__init__()
+	def __init__(self, config_data=None):
+		super().__init__(config_data=config_data)
 
 
 
