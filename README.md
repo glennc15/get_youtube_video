@@ -1,7 +1,3 @@
-import unittest
-
-
-
 '''
 
 
@@ -18,7 +14,7 @@ please explain your approach.
 
 '''
 
-'''
+
 
 classes: 
 
@@ -45,7 +41,3 @@ ConfigReader:
 	helper method for loading config.json
 
 
-Support files:
-config.json
-
-'''
