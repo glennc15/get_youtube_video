@@ -25,6 +25,8 @@ class PlaylistSelector(ConfigReader):
 
 		'''
 
+		# The playlist in the config file are in a dictionary sorted by
+		# category. This converts the dictionary to a flat list:
 		all_playlists = [v for k, v in ConfigReader().playlists.items()]
 		all_playlists_urls = [url for playlist in all_playlists for url in playlist]
 
