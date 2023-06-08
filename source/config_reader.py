@@ -6,11 +6,12 @@ class ConfigReader(object):
 	'''
 	
 	reads the config file (config.json) and stores all entries as properties.
+	Alternatively, the user can supply a configuration dictionary.
 
 	'''
 
-	def __init__(self):
-		self.read_config_file()
+	def __init__(self, config_data=None):
+		self.read_config_file(config_data=None)
 
 
 
@@ -107,30 +108,38 @@ class ConfigReader(object):
 # *************************************************************
 # Start: Private methods
 	
-	def read_config_file(self):
+	def read_config_file(self, config_data=None):
+		'''
+		
+		Set properties using the config.json file or a user supplie
+		configuration dictionary.
 
-		# open config.json and read it's contents 
-		BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-		json_file = open(os.path.join(BASE_DIR, 'config.json'), 'r')
-		config_json = json.loads(json_file.read())
+		'''
 
-		self.email = config_json['email']
-		self.playlists = config_json['playlists']
-		self.pause = config_json['pause']
-		self.max_wait = config_json['max_wait']
-		self.email_sender = config_json['email_sender']
-		self.email_body = config_json['email_body']
-		self.email_subject = config_json['email_subject']
-		self.email_recipents = config_json['email_recipents']
-		self.email_server = config_json['email_server']
-		self.email_server_port = config_json['email_server_port']
+		if config_data is None:
+			# open config.json and read it's contents 
+			BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+			json_file = open(os.path.join(BASE_DIR, 'config.json'), 'r')
+			config_data = json.loads(json_file.read())
+			json_file.close()
 
 
+		self.email = config_data['email']
+		self.playlists = config_data['playlists']
+		self.pause = config_data['pause']
+		self.max_wait = config_data['max_wait']
+		self.email_sender = config_data['email_sender']
+		self.email_body = config_data['email_body']
+		self.email_subject = config_data['email_subject']
+		self.email_recipents = config_data['email_recipents']
+		self.email_server = config_data['email_server']
+		self.email_server_port = config_data['email_server_port']
 
 
 
 
-		json_file.close()
+
+
 
 
 

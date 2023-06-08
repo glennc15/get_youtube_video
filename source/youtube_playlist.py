@@ -32,7 +32,7 @@ class YouTubePlaylist(object):
 		main controller method for the class
 
 		'''
-		playlist_url = PlaylistSelector().get_randomplaylist()
+		playlist_url = PlaylistSelector().get_random_playlist()
 
 		playlist_scraper = PlaylistScraper()
 		playlist_scraper.get_videos(playlist_url=playlist_url)
